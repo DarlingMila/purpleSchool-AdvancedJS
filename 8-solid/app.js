@@ -1,25 +1,30 @@
 class Billing {
-    amount = 0;
-    
-    calculateTotal(sum) {
+    amount = 50;
+
+    set sum(sum) {
         return this.amount += sum;
     }
-}
 
-class FixBilling extends Billing {
-    calculateTotal() {
+    calculateTotal(sum) {
+        if (sum) this.sum = sum;
         return this.amount;
     }
 }
 
+class FixBilling extends Billing {
+
+}
+
 class HourBilling extends Billing {
-    calculateTotal(hours) {
-        return this.amount *= hours;
+
+    set sum(hours) {
+        return this.amount += hours;
     }
 }
 
 class ItemBilling extends Billing {
-    calculateTotal(items) {
+
+    set sum(items) {
         return this.amount *= items;
     }
 }
