@@ -1,6 +1,6 @@
 const count = document.querySelector('.count');
 const btnWrapper = document.querySelector('.btnWrapper');
-const [...btns] = btnWrapper.children;
+const btns = btnWrapper.querySelectorAll('.btn');
 
 
 btnWrapper.addEventListener('click', (e) => {
